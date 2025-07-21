@@ -4,23 +4,37 @@ project(Snitch)
 set(CMAKE_CXX_STANDARD 17)
 
 include_directories(
-    stats/CPU
-    stats/GPU
-    stats/OS
-    stats/HOST
-    stats/UPTIME
-    stats/USER
-    stats/KERNEL
+    stats/cpu
+    stats/gpu
+    stats/os
+    stats/host
+    stats/uptime
+    stats/user
+    stats/kernel
+    stats/packages
+    stats/memory
+    stats/terminal
+    stats/shell
+    stats/battery
+    stats/disk
+    utils
 )
 
 add_executable(fetch
     main.cpp
-    stats/CPU/CPU.cpp
-    stats/GPU/GPU.cpp
-    stats/OS/OS.cpp
-    stats/HOST/HOST.cpp
-    stats/UPTIME/UPTIME.cpp
-    stats/USER/USER.cpp
-    stats/KERNEL/KERNEL.cpp
+    stats/cpu/cpu.cpp
+    stats/gpu/gpu.cpp
+    stats/os/os.cpp
+    stats/host/host.cpp
+    stats/uptime/uptime.cpp
+    stats/user/user.cpp
+    stats/kernel/kernel.cpp
+    stats/packages/packages.cpp
+    stats/memory/memory.cpp
+    stats/terminal/terminal.cpp
+    stats/shell/shell.cpp
+    stats/battery/battery.cpp
+    stats/disk/disk.cpp
+    utils/utils.h
 )
 

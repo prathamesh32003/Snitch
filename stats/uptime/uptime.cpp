@@ -1,4 +1,5 @@
-#include "UPTIME.h"
+#include "uptime.h"
+#include "../../utils/utils.h"
 #include <chrono>
 #include <fstream>
 
@@ -13,5 +14,5 @@ std::string UPTIME::get_uptime() {
   std::string hours = std::to_string((int)uptime_seconds / 3600) + "H ";
   std::string minutes = std::to_string((int)uptime_seconds % 3600 / 60) + "M";
 
-  return hours + minutes;
+  return trim(hours + minutes);
 }

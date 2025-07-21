@@ -1,4 +1,5 @@
-#include "OS.h"
+#include "os.h"
+#include "../../utils/utils.cpp"
 #include <fstream>
 
 std::string OS::get_os_name() {
@@ -8,7 +9,7 @@ std::string OS::get_os_name() {
   while (std::getline(getinfo, s)) {
     if (s.substr(0, 11) == "PRETTY_NAME") {
       s.pop_back();
-      return s.substr(s.find("=") + 2);
+      return trim(s.substr(s.find("=") + 2));
     }
   }
   return "Unable to get OS name";

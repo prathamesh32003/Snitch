@@ -1,0 +1,42 @@
+#include "gpu.h"
+#include "../../utils/utils.h"
+#include <cstdio>
+#include <regex>
+#include <sstream>
+#include <string>
+
+std::string GPU::get_gpu_names() {
+  FILE *pipe = popen("vulkaninfo 2>/dev/null | grep 'GPU id : '", "r");
+  if (!pipe) {
+    return "Failed to run vulkaninfo\n";
+  }
+
+  std::ostringstream gpus;
+  char buffer[512];
+
+  std::regex gpu_regex(R"(GPU id\s*:\s*\d+\s*\((.*)\))");
+
+  while (fgets(buffer, sizeof(buffer), pipe) != nullptr) {
+    std::string line(buffer);
+
+    std::smatch match;
+    if (std::regex_search(line, match, gpu_regex)) {
+      std::string name = match[1];
+
+      // Ignore software renderers (e.g. LLVM)
+      if (name.find("llvm") != std::string::npos ||
+          name.find("llvmpipe") != std::string::npos ||
+          name.find("Software") != std::string::npos) {
+        break;
+      }
+
+      gpus << name << "\n";
+    }
+  }
+
+  pclose(pipe);
+
+  std::string result = gpus.str();
+
+  return trim(result);
+}
