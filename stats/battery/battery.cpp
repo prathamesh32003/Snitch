@@ -19,9 +19,9 @@ std::string BATTERY::print() {
 
       std::string battery_level;
       std::getline(file, battery_level);
-      return trim(battery_level);
+      return trim(battery_level + "%");
     }
   }
 
-  return "N/A";
+  return "unknown";
 }

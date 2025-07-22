@@ -13,5 +13,5 @@ std::string CPU::print() {
     }
   }
 
-  return "";
+  return "unknown";
 }

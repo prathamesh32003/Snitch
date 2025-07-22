@@ -12,5 +12,5 @@ std::string OS::print() {
       return trim(s.substr(s.find("=") + 2));
     }
   }
-  return "Unable to get OS name";
+  return "unknown";
 }

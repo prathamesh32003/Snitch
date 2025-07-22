@@ -11,8 +11,7 @@ std::string DISK::print() {
   auto space = fs::space("/", ec);
 
   if (ec) {
-    std::cerr << "Error getting disk space: " << ec.message() << "\n";
-    return "Error";
+    return "unknown";
   }
 
   constexpr long GB = 1024 * 1024 * 1024;
