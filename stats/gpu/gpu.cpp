@@ -5,7 +5,7 @@
 #include <sstream>
 #include <string>
 
-std::string GPU::get_gpu_names() {
+std::string GPU::print() {
   FILE *pipe = popen("vulkaninfo 2>/dev/null | grep 'GPU id : '", "r");
   if (!pipe) {
     return "Failed to run vulkaninfo\n";

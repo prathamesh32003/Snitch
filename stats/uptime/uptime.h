@@ -3,5 +3,5 @@
 #include <string>
 
 namespace UPTIME {
-std::string get_uptime();
+std::string print();
 };

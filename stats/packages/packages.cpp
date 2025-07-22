@@ -32,7 +32,7 @@ std::string run_command(const std::string cmd) {
 
 } // namespace
 
-std::string PACKAGES::get_total_packages() {
+std::string PACKAGES::print() {
   const std::map<std::string, std::string> managers = {
       {"apx", "apx list -i | wc -l"},
       {"eopkg", "eopkg list-installed | wc -l"},

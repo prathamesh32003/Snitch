@@ -2,5 +2,5 @@
 
 #include <string>
 namespace DISK {
-std::string get_disk_space();
+std::string print();
 }

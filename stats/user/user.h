@@ -3,5 +3,5 @@
 #include <string>
 
 namespace USER {
-std::string get_user_name();
+std::string print();
 };

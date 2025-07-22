@@ -1,7 +1,6 @@
 #pragma once
 
 #include <string>
-
-namespace HOST {
+namespace DESKTOP {
 std::string print();
-};
+}

@@ -1,5 +1,7 @@
+#include "config/config.h"
 #include "stats/battery/battery.h"
 #include "stats/cpu/cpu.h"
+#include "stats/desktop/desktop.h"
 #include "stats/disk/disk.h"
 #include "stats/gpu/gpu.h"
 #include "stats/host/host.h"
@@ -11,33 +13,42 @@
 #include "stats/terminal/terminal.h"
 #include "stats/uptime/uptime.h"
 #include "stats/user/user.h"
+#include <cstdlib>
+#include <functional>
 #include <iostream>
+#include <string>
+#include <unordered_map>
+#include <vector>
 
 int main(int argc, char *argv[]) {
-  std::cout << CPU::get_cpu_name() << std::endl;
+  std::string path = getenv("HOME");
+  path += "/.config/Snitch/Snitch.conf";
 
-  // std::cout << GPU::get_gpu_names() << std::endl;
+  Config config("/home/knight/.config/Snitch/Snitch.conf");
+  std::vector<std::string> enabled_stats = config.get_enabled_stats();
 
-  std::cout << OS::get_os_name() << std::endl;
+  const std::unordered_map<std::string, std::function<std::string()>>
+      actionMap = {
+          {"user", []() { return USER::print(); }},
+          {"host", []() { return HOST::print(); }},
+          {"uptime", []() { return UPTIME::print(); }},
+          {"os", []() { return OS::print(); }},
+          {"kernel", []() { return KERNEL::print(); }},
+          {"desktop", []() { return DESKTOP::print(); }},
+          {"terminal", []() { return TERMINAL::print(); }},
+          {"shell", []() { return SHELL::print(); }},
+          {"packages", []() { return PACKAGES::print(); }},
+          {"gpu", []() { return GPU::print(); }},
+          {"cpu", []() { return CPU::print(); }},
+          {"battery", []() { return BATTERY::print(); }},
+          {"memory", []() { return MEMORY::print(); }},
+          {"disk", []() { return DISK::print(); }},
+      };
 
-  std::cout << HOST::get_host_name() << std::endl;
-
-  std::cout << UPTIME::get_uptime() << std::endl;
-
-  std::cout << USER::get_user_name() << std::endl;
-
-  std::cout << KERNEL::get_kernel_name() << std::endl;
-
-  std::cout << PACKAGES::get_total_packages() << std::endl;
-
-  std::cout << MEMORY::get_total_memory() << std::endl;
-
-  std::cout << TERMINAL::get_terminal_name() << std::endl;
-
-  std::cout << SHELL::get_shell_name() << std::endl;
-
-  std::cout << BATTERY::get_battery() << std::endl;
-
-  std::cout << DISK::get_disk_space() << std::endl;
-  return 0;
+  for (const auto stat : enabled_stats) {
+    auto it = actionMap.find(stat);
+    if (it != actionMap.end()) {
+      std::cout << it->second() << "\n";
+    }
+  }
 }

@@ -2,10 +2,11 @@
 #include "../../utils/utils.h"
 #include <filesystem>
 #include <iostream>
+#include <sstream>
 #include <string>
 namespace fs = std::filesystem;
 
-std::string DISK::get_disk_space() {
+std::string DISK::print() {
   std::error_code ec;
   auto space = fs::space("/", ec);
 
@@ -14,10 +15,14 @@ std::string DISK::get_disk_space() {
     return "Error";
   }
 
-  float total = space.capacity / (1024.0 * 1024.0 * 1024.0);
-  float used = (space.capacity - space.free) / (1024.0 * 1024.0 * 1024.0);
-  float percent = (used / total) * 100;
+  constexpr long GB = 1024 * 1024 * 1024;
 
-  return std::to_string(int(used)) + "/" + std::to_string(int(total)) +
-         " GB (" + std::to_string(int(percent)) + "%)";
+  long total = space.capacity / GB;
+  long used = (space.capacity - space.free) / GB;
+  long percent = (static_cast<double>(used) / total) * 100;
+
+  std::ostringstream oss;
+  oss << used << "/" << total << " GB (" << percent << "%)";
+
+  return trim(oss.str());
 }

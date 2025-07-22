@@ -3,5 +3,5 @@
 #include <string>
 
 namespace KERNEL {
-std::string get_kernel_name();
+std::string print();
 };

@@ -2,5 +2,5 @@
 
 #include <string>
 namespace PACKAGES {
-std::string get_total_packages();
+std::string print();
 }; // namespace PACKAGES

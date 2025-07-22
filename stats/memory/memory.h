@@ -2,5 +2,5 @@
 
 #include <string>
 namespace MEMORY {
-std::string get_total_memory();
+std::string print();
 }

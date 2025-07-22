@@ -3,7 +3,7 @@
 #include <fstream>
 #include <unistd.h>
 
-std::string SHELL::get_shell_name() {
+std::string SHELL::print() {
   pid_t shell_id = getppid();
   std::string path = "/proc/" + std::to_string(shell_id) + "/status";
   std::ifstream file(path);

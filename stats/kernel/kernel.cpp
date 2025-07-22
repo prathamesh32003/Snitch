@@ -2,7 +2,7 @@
 #include "../../utils/utils.h"
 #include <sys/utsname.h>
 
-std::string KERNEL::get_kernel_name() {
+std::string KERNEL::print() {
   struct utsname osInfo{};
   uname(&osInfo);
   return trim(osInfo.release);

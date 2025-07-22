@@ -2,5 +2,5 @@
 
 #include <string>
 namespace SHELL {
-std::string get_shell_name();
+std::string print();
 }

@@ -2,7 +2,7 @@
 #include "../../utils/utils.cpp"
 #include <fstream>
 
-std::string OS::get_os_name() {
+std::string OS::print() {
   std::ifstream getinfo("/etc/os-release");
   std::string s;
 

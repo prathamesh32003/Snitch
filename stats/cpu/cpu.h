@@ -2,5 +2,5 @@
 #include <string>
 
 namespace CPU {
-std::string get_cpu_name();
+std::string print();
 };

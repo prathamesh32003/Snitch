@@ -2,7 +2,7 @@
 #include "../../utils/utils.h"
 #include <fstream>
 
-std::string CPU::get_cpu_name() {
+std::string CPU::print() {
   std::ifstream getinfo("/proc/cpuinfo");
   std::string s, result;
 

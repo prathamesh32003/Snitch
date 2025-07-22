@@ -3,7 +3,7 @@
 #include <chrono>
 #include <fstream>
 
-std::string UPTIME::get_uptime() {
+std::string UPTIME::print() {
   std::chrono::milliseconds uptime(0u);
   double uptime_seconds;
   if (std::ifstream("/proc/uptime", std::ios::in) >> uptime_seconds) {

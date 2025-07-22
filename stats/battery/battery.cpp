@@ -6,7 +6,7 @@
 #include <string>
 namespace fs = std::filesystem;
 
-std::string BATTERY::get_battery() {
+std::string BATTERY::print() {
   std::string path = "/sys/class/power_supply/";
   for (const auto &entry : fs::directory_iterator(path)) {
     std::string name = entry.path().filename().string();

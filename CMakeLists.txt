@@ -17,6 +17,8 @@ include_directories(
     stats/shell
     stats/battery
     stats/disk
+    stats/desktop
+    config/
     utils
 )
 
@@ -35,6 +37,8 @@ add_executable(fetch
     stats/shell/shell.cpp
     stats/battery/battery.cpp
     stats/disk/disk.cpp
+    stats/desktop/desktop.cpp
+    config/config.cpp
     utils/utils.h
 )
 

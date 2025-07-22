@@ -3,5 +3,5 @@
 #include <string>
 
 namespace GPU {
-std::string get_gpu_names();
+std::string print();
 }; // namespace GPU
