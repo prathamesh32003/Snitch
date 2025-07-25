@@ -2,5 +2,5 @@
 
 #include <string>
 namespace SHELL {
-std::string print();
+std::string get();
 }

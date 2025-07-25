@@ -5,7 +5,7 @@
 #include <string>
 #include <unistd.h>
 
-std::string TERMINAL::print() {
+std::string TERMINAL::get() {
   pid_t shell_id = getppid();
   std::string path = "/proc/" + std::to_string(shell_id) + "/status";
   std::ifstream file(path);

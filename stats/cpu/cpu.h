@@ -2,5 +2,5 @@
 #include <string>
 
 namespace CPU {
-std::string print();
+std::string get();
 };

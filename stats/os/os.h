@@ -3,5 +3,5 @@
 #include <string>
 
 namespace OS {
-std::string print();
+std::string get();
 };

@@ -3,5 +3,5 @@
 #include <string>
 
 namespace UPTIME {
-std::string print();
+std::string get();
 };

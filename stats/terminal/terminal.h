@@ -2,5 +2,5 @@
 
 #include <string>
 namespace TERMINAL {
-std::string print();
+std::string get();
 }

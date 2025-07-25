@@ -5,7 +5,7 @@
 #include <sstream>
 #include <string>
 
-std::string GPU::print() {
+std::string GPU::get() {
   FILE *pipe = popen("vulkaninfo 2>/dev/null | grep 'GPU id : '", "r");
   if (!pipe) {
     return "unknown";

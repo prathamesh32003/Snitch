@@ -3,7 +3,7 @@
 #include <string>
 #include <sys/utsname.h>
 
-std::string KERNEL::print() {
+std::string KERNEL::get() {
   struct utsname osInfo{};
   uname(&osInfo);
 

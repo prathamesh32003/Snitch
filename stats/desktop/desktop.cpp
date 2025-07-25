@@ -3,7 +3,7 @@
 #include <cstdlib>
 #include <cstring>
 
-std::string DESKTOP::print() {
+std::string DESKTOP::get() {
   std::string result = "";
 
   result = getenv("XDG_CURRENT_DESKTOP");

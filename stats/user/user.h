@@ -3,5 +3,5 @@
 #include <string>
 
 namespace USER {
-std::string print();
+std::string get();
 };

@@ -6,7 +6,7 @@
 #include <string>
 namespace fs = std::filesystem;
 
-std::string DISK::print() {
+std::string DISK::get() {
   std::error_code ec;
   auto space = fs::space("/", ec);
 

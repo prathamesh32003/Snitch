@@ -3,5 +3,5 @@
 #include <string>
 
 namespace KERNEL {
-std::string print();
+std::string get();
 };

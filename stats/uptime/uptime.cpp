@@ -3,7 +3,7 @@
 #include <chrono>
 #include <fstream>
 
-std::string UPTIME::print() {
+std::string UPTIME::get() {
   double uptime_seconds = 0.0;
   std::ifstream uptime_file("/proc/uptime");
 

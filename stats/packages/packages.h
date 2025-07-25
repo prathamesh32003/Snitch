@@ -2,5 +2,5 @@
 
 #include <string>
 namespace PACKAGES {
-std::string print();
+std::string get();
 }; // namespace PACKAGES

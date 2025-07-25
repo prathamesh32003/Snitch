@@ -2,5 +2,5 @@
 
 #include <string>
 namespace MEMORY {
-std::string print();
+std::string get();
 }

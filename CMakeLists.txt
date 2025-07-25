@@ -19,7 +19,8 @@ include_directories(
     stats/disk
     stats/desktop
     config/
-    utils
+    utils/
+    core/
 )
 
 add_executable(fetch
@@ -40,5 +41,7 @@ add_executable(fetch
     stats/desktop/desktop.cpp
     config/config.cpp
     utils/utils.h
+    utils/color.cpp
+    core/dispatcher.cpp
 )
 

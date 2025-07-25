@@ -2,5 +2,5 @@
 
 #include <string>
 namespace DISK {
-std::string print();
+std::string get();
 }

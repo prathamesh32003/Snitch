@@ -3,5 +3,5 @@
 #include <string>
 
 namespace HOST {
-std::string print();
+std::string get();
 };

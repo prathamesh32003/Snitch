@@ -4,7 +4,7 @@
 #include <sstream>
 #include <string>
 
-std::string MEMORY::print() {
+std::string MEMORY::get() {
   std::ifstream getinfo("/proc/meminfo");
   if (!getinfo.is_open()) {
     return "Unknown";
