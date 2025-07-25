@@ -6,12 +6,12 @@
 #include <string>
 namespace fs = std::filesystem;
 
-std::string DISK::get() {
+std::vector<std::string> DISK::get() {
   std::error_code ec;
   auto space = fs::space("/", ec);
 
   if (ec) {
-    return "unknown";
+    return {"unknown"};
   }
 
   constexpr long GB = 1024 * 1024 * 1024;
@@ -23,5 +23,5 @@ std::string DISK::get() {
   std::ostringstream oss;
   oss << used << "/" << total << " GB (" << percent << "%)";
 
-  return trim(oss.str());
+  return {trim(oss.str())};
 }

@@ -6,7 +6,7 @@
 #include <string>
 namespace fs = std::filesystem;
 
-std::string BATTERY::get() {
+std::vector<std::string> BATTERY::get() {
   std::string path = "/sys/class/power_supply/";
   for (const auto &entry : fs::directory_iterator(path)) {
     std::string name = entry.path().filename().string();
@@ -19,9 +19,9 @@ std::string BATTERY::get() {
 
       std::string battery_level;
       std::getline(file, battery_level);
-      return trim(battery_level + "%");
+      return {trim(battery_level + "%")};
     }
   }
 
-  return "unknown";
+  return {"unknown"};
 }

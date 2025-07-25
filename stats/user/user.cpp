@@ -1,9 +1,9 @@
 #include "user.h"
 #include "../../utils/utils.h"
 
-std::string USER::get() {
+std::vector<std::string> USER::get() {
   std::string result = std::getenv("USER");
   if (result.length() == 0)
-    return "unknown";
-  return trim(result);
+    return {"unknown"};
+  return {trim(result)};
 }

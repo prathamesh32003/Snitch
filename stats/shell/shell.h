@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <vector>
 namespace SHELL {
-std::string get();
+std::vector<std::string> get();
 }

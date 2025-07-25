@@ -22,20 +22,20 @@ Config::Config(const std::string filepath) {
 void Config::create_default_config(const std::string configPath) {
   std::string content = "# The order of content here is the same way it will "
                         "display in your terminal\n"
-                        "user\n"
-                        "host\n"
-                        "uptime\n"
-                        "os\n"
-                        "kernel\n"
-                        "desktop\n"
-                        "terminal\n"
-                        "shell\n"
-                        "# packages # Resource Intensive\n"
-                        "# gpu # Resource Intensive\n"
-                        "cpu\n"
-                        "battery\n"
-                        "memory\n"
-                        "disk\n";
+                        "USER\n"
+                        "HOST\n"
+                        "UPTIME\n"
+                        "OS\n"
+                        "KERNEL\n"
+                        "DESKTOP\n"
+                        "TERMINAL\n"
+                        "SHELL\n"
+                        "# PACKAGES # Resource Intensive\n"
+                        "# GPU # Resource Intensive\n"
+                        "CPU\n"
+                        "BATTERY\n"
+                        "MEMORY\n"
+                        "DISK\n";
   std::ofstream configFile(configPath);
   configFile << content;
   configFile.close();

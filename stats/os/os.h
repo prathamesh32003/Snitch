@@ -1,7 +1,8 @@
 #pragma once
 
 #include <string>
+#include <vector>
 
 namespace OS {
-std::string get();
+std::vector<std::string> get();
 };

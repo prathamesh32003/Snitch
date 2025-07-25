@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <vector>
 namespace PACKAGES {
-std::string get();
+std::vector<std::string> get();
 }; // namespace PACKAGES

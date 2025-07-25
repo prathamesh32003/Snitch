@@ -3,7 +3,7 @@
 #include <cstdlib>
 #include <cstring>
 
-std::string DESKTOP::get() {
+std::vector<std::string> DESKTOP::get() {
   std::string result = "";
 
   result = getenv("XDG_CURRENT_DESKTOP");
@@ -22,5 +22,5 @@ std::string DESKTOP::get() {
   if (result == "")
     result = "Unknown";
 
-  return trim(result);
+  return {trim(result)};
 }

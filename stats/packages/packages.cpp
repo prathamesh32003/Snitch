@@ -32,7 +32,7 @@ std::string run_command(const std::string cmd) {
 
 } // namespace
 
-std::string PACKAGES::get() {
+std::vector<std::string> PACKAGES::get() {
   const std::map<std::string, std::string> managers = {
       {"apx", "apx list -i | wc -l"},
       {"eopkg", "eopkg list-installed | wc -l"},
@@ -57,8 +57,8 @@ std::string PACKAGES::get() {
 
   for (const auto &[manager, cmd] : managers) {
     if (command_exists(manager)) {
-      return trim(run_command(cmd));
+      return {trim(run_command(cmd))};
     }
   }
-  return "unknown";
+  return {"unknown"};
 }

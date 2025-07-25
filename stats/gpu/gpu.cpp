@@ -1,14 +1,14 @@
 #include "gpu.h"
-#include "../../utils/utils.h"
 #include <cstdio>
 #include <regex>
 #include <sstream>
 #include <string>
 
-std::string GPU::get() {
+std::vector<std::string> GPU::get() {
+  std::vector<std::string> gpu_array;
   FILE *pipe = popen("vulkaninfo 2>/dev/null | grep 'GPU id : '", "r");
   if (!pipe) {
-    return "unknown";
+    return {"unknown"};
   }
 
   std::ostringstream gpus;
@@ -30,13 +30,11 @@ std::string GPU::get() {
         break;
       }
 
-      gpus << name << "\n";
+      gpu_array.push_back(name);
     }
   }
 
   pclose(pipe);
 
-  std::string result = gpus.str();
-
-  return trim(result);
+  return gpu_array;
 }

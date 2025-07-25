@@ -4,10 +4,10 @@
 #include <sstream>
 #include <string>
 
-std::string MEMORY::get() {
+std::vector<std::string> MEMORY::get() {
   std::ifstream getinfo("/proc/meminfo");
   if (!getinfo.is_open()) {
-    return "Unknown";
+    return {"Unknown"};
   }
 
   std::string line;
@@ -35,5 +35,5 @@ std::string MEMORY::get() {
 
   std::ostringstream oss;
   oss << used << "/" << total << " MB (" << percent << "%)";
-  return trim(oss.str());
+  return {trim(oss.str())};
 }

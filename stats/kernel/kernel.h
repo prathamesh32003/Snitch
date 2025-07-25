@@ -1,7 +1,8 @@
 #pragma once
 
 #include <string>
+#include <vector>
 
 namespace KERNEL {
-std::string get();
+std::vector<std::string> get();
 };
