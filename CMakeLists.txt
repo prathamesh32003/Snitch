@@ -43,5 +43,6 @@ add_executable(fetch
     utils/utils.h
     utils/color.cpp
     core/dispatcher.cpp
+    core/ascii.cpp
 )
 

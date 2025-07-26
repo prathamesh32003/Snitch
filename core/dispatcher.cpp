@@ -14,6 +14,7 @@
 #include "../stats/uptime/uptime.h"
 #include "../stats/user/user.h"
 #include "../utils/color.h"
+#include "ascii.h"
 #include <functional>
 #include <iostream>
 #include <unordered_map>
@@ -44,6 +45,7 @@ void Dispatcher::run(std::string key) {
                             "\033[0m\n");
     }
   }
-  for (auto it : print_stats)
-    std::cout << it;
+  for (auto it : ASCII::get_ascii_art()) {
+    std::cout << it << std::endl;
+  }
 }
