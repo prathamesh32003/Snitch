@@ -7,6 +7,8 @@ I personally wanted to create a fetch tool and I also wanted to create a project
 
 ## Screenshots:
 ![Oops!](./assets/fedora.png)
+<br>
+<br>
 ![Oops2!](./assets/ubuntu.png)
 
 ## Dependancies:
