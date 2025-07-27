@@ -6,10 +6,12 @@ Snitch Systemfetch
 I personally wanted to create a fetch tool and I also wanted to create a project in C++, so I combined these together and **BOOM!** Snitch was born!
 
 ## Screenshots:
-![Oops!](./assets/fedora.png)
+![Oops!](./assets/fedora1.png)
 <br>
 <br>
-![Oops2!](./assets/ubuntu.png)
+<br>
+<br>
+![Oops2!](./assets/ubuntu1.png)
 
 ## Dependancies:
 `make` and `cmake`for compilation
