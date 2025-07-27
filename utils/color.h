@@ -2,6 +2,6 @@
 
 #include <string>
 #include <vector>
-namespace Color {
+namespace COLOR {
 std::vector<std::string> get_colors();
 }

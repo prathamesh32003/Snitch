@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <vector>
 namespace Dispatcher {
-void run(std::string);
+void run(std::vector<std::string>);
 }

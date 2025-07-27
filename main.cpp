@@ -11,7 +11,5 @@ int main(int argc, char *argv[]) {
   Config config("/home/knight/.config/Snitch/Snitch.conf");
   std::vector<std::string> enabled_stats = config.get_enabled_stats();
 
-  for (const auto stat : enabled_stats) {
-    Dispatcher::run(stat);
-  }
+  Dispatcher::run(enabled_stats);
 }

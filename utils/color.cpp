@@ -10,7 +10,7 @@ std::random_device rd;
 std::mt19937 gen(rd());
 std::uniform_int_distribution<> dist(0, baseColors.size());
 
-std::vector<std::string> Color::get_colors() {
+std::vector<std::string> COLOR::get_colors() {
   std::vector<std::string> colors;
   int base = baseColors[gen() % baseColors.size()];
   std::string label = "\033[1;38;5;" + std::to_string(base) + "m";

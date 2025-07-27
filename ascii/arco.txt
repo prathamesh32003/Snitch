@@ -1,0 +1,11 @@
+{BE}          A          
+{BE}         ooo         
+{BE}        ooooo        
+{BE}       ooooooo       
+{BE}      ooooooooo      
+{BE}     ooooo ooooo     
+{BE}    ooooo   ooooo    
+{BE}   ooooo     ooooo   
+{BE}  ooooo  {GN}oooooooooo  
+{BE} ooooo      {GN}oooooooo 
+{BE}ooooo          {GN}oooooo
