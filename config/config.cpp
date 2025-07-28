@@ -5,6 +5,22 @@
 #include <string>
 #include <vector>
 
+void copy_ascii_files(const std::string configpath) {
+  namespace fs = std::filesystem;
+  fs::path configdir = configpath;
+  if (!fs::exists(configdir / "ascii")) {
+    fs::create_directories(configdir / "ascii");
+
+    for (const auto &file :
+         fs::directory_iterator("/usr/local/share/snitch/ascii/")) {
+      if (file.is_regular_file()) {
+        fs::copy_file(file.path(), configdir / "ascii" / file.path().filename(),
+                      fs::copy_options::skip_existing);
+      }
+    }
+  }
+}
+
 Config::Config(const std::string filepath) {
   namespace fs = std::filesystem;
   fs::path configPath(filepath);
@@ -15,6 +31,8 @@ Config::Config(const std::string filepath) {
     }
     create_default_config(configPath);
   }
+
+  copy_ascii_files(configPath.parent_path().string());
 
   load_from_file(filepath);
 }

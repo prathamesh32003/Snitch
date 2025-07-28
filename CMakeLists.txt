@@ -3,6 +3,7 @@ project(Snitch)
 
 set(CMAKE_CXX_STANDARD 17)
 
+
 include_directories(
     stats/cpu
     stats/gpu
@@ -23,7 +24,7 @@ include_directories(
     core/
 )
 
-add_executable(fetch
+add_executable(snitch
     main.cpp
     stats/cpu/cpu.cpp
     stats/gpu/gpu.cpp
@@ -45,4 +46,7 @@ add_executable(fetch
     core/dispatcher.cpp
     core/ascii.cpp
 )
+
+install(TARGETS snitch DESTINATION bin)
+install(DIRECTORY ascii/ DESTINATION share/snitch/ascii)
 
