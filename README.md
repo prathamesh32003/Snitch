@@ -33,11 +33,11 @@ Make a build directory:
 
 Compile the program:
 
-    cmake .. && make
+    cmake .. && sudo make install
 
 Run the program:
 
-    ./fetch
+    snitch
 
 ---
 **VERY VERY IMPORTANT:** If you haven't realized by reading the code, I'm a very noobish coder and it's very possible that there are better ways to write this software. So, if you want to actually suggest them, you can open an issue, I'm always eager to learn new things!
