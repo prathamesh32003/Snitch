@@ -1,5 +1,6 @@
 #include "ascii.h"
 #include <cstdio>
+#include <cstdlib>
 #include <fstream>
 #include <string>
 #include <unordered_map>
@@ -57,7 +58,8 @@ std::string replace_colors(std::string line) {
 } // namespace
 
 std::vector<std::string> ASCII::get_ascii_art() {
-  std::ifstream ascii_file("../ascii/" + get_distro_id() + ".txt");
+  std::ifstream ascii_file(std::string(getenv("HOME")) +
+                           "/.config/Snitch/ascii/" + get_distro_id() + ".txt");
   std::vector<std::string> art;
   std::string line;
   while (std::getline(ascii_file, line)) {
